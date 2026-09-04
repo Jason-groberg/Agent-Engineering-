@@ -1,0 +1,18 @@
+# PyCharm IDE settings
+.idea/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments (just in case you ever use local venvs)
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS generated files
+.DS_Store
+Thumbs.db
