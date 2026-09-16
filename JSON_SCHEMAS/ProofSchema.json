@@ -1,0 +1,33 @@
+{
+  "name": "theorem_breakdown",
+  "strict": true,
+  "schema": {
+      "type": "object",
+      "properties": {
+          "theorem_name": {"type": "string"},
+          "plain_english_intuition": {"type": "string"},
+          "prerequisites": {
+              "type": "array",
+              "items": {"type": "string"}
+          },
+          "premises": {"type": "array", "items": {"type": "string"}},
+          "proof_steps": {
+              "type": "array",
+              "items": {
+                  "type": "object",
+                  "properties": {
+                      "step_number": {"type": "integer"},
+                      "statement": {"type": "string"},
+                      "justification": {"type": "string"},
+                      "example": {"type": "string"}
+                  },
+                  "required": ["step_number", "statement", "justification","example"],
+                  "additionalProperties": false
+              }
+          },
+          "conclusion": {"type": "string"}
+      },
+      "required": ["theorem_name", "plain_english_intuition", "prerequisites", "premises", "conclusion", "proof_steps"],
+      "additionalProperties": false
+    }
+}
