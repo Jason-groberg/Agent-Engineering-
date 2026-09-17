@@ -3,9 +3,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import time
 from litellm import completion, completion_cost
-from openai.resources.responses import input_tokens
 from pygments.lexers import q
-import argparse
 import os
 import datetime
 load_dotenv()
@@ -83,6 +81,7 @@ class UsageTracker(dict):
         print(f"\nSession history and usage successfully saved to: {filename}")
 
 gbt = "gpt-5.6-luna"
+coin = "\U0001FA99"
 
 def chat():
     client = OpenAI()
@@ -111,9 +110,12 @@ def chat():
         reasoning_tokens = usage.output_tokens_details.reasoning_tokens
         cost = completion_cost(completion_response=response)
         output = response.output_text
-        print(f"AI: {output}\n")
-        
-        # Append the AI's response to your history list so it remembers it for the next loop!
+
+        if reasoning_tokens == 0:
+            print(f"{gbt}: {output}\n{"="*18}\n<- {input_tokens}{coin} inputed <-\n-> {output_tokens}{coin} output ->\ncost: ${cost:.6f}\n{"="*18}\n")
+        else:
+            print(
+                f"{gbt}: {output}\n{"="*19}\n<- {input_tokens}{coin} inputed <-\n-> {reasoning_tokens}{coin} thought <-\n-> {output_tokens}{coin} output ->\ncost: ${cost:.6f}\n{"="*19}\n")
         history.append({"role": "assistant", "content": output})
 
         record = {
@@ -125,8 +127,6 @@ def chat():
             "cost": cost
         }
         tracker.add_record(record)
-        print(f"{gbt}: {output}\ncost: ${cost:.6f}")
-
 
     tracker.print_summary()
     tracker.save_to_file()
