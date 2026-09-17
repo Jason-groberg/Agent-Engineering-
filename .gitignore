@@ -6,7 +6,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
 # Environments (just in case you ever use local venvs)
 .env
 .venv
@@ -20,4 +19,4 @@ Thumbs.db
 
 Past_Prompts/
 media/
-Reports/
+
