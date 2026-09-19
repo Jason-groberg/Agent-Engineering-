@@ -80,8 +80,10 @@ class UsageTracker(dict):
         
         print(f"\nSession history and usage successfully saved to: {filename}")
 
-gbt = "gpt-5.6-luna"
+gbt = "gpt-5.6-sol"
 coin = "\U0001FA99"
+with open("System_Prompts/Game.md", "r", encoding="utf-8") as f:
+    system = f.read()
 
 def chat():
     client = OpenAI()
@@ -99,6 +101,7 @@ def chat():
         response = client.responses.create(
             model=gbt,
             reasoning={"effort": "medium"},
+            instructions=system,
             input=history
         )
 
@@ -116,6 +119,8 @@ def chat():
         else:
             print(
                 f"{gbt}: {output}\n{"="*19}\n<- {input_tokens}{coin} inputed <-\n-> {reasoning_tokens}{coin} thought <-\n-> {output_tokens}{coin} output ->\ncost: ${cost:.6f}\n{"="*19}\n")
+
+        # print(f"Chat: {output}\n")
         history.append({"role": "assistant", "content": output})
 
         record = {
