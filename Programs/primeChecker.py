@@ -27,3 +27,8 @@ try:
 
 except ValueError:
     print("Please enter a valid integer.")
+
+
+
+if "__main__" == __name__:
+    print((0.0043*1000000)//12)

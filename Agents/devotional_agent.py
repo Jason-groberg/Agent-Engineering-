@@ -2,13 +2,13 @@ import os
 from completion import run_prompt
 
 def analyze_devotional():
-    devo_path = "devo2.txt"
-    output_path = "Devotional_Agent3.md"
+    devo_path = "2.txt"
+    output_path = "gong_summary.md"
 
     with open(devo_path, "r", encoding="utf-8") as f:
         devo_text = f.read()
 
-    custom_criteria = "Metaphors, analogies, and real-life stories used by the speaker to illustrate their points."
+    custom_criteria = "Quotes relating to artificial intelligence, or teachings that relate to working ethically as an agent engineer."
 
     prompt = f"""
 You are an expert at analyzing and summarizing religious speeches and devotionals. 

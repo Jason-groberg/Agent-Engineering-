@@ -3,21 +3,19 @@ import json
 import time
 from dotenv import load_dotenv
 from openai import OpenAI
-from Tools.custom_tools import get_weather, mod_exp, get_url_contents, get_conference_speakers, fermat, generate_large_prime, tools as custom_tools
+from Tools.agentic_tools import shell, read, write, edit, tools as custom_tools
 from usage_tracker import UsageTracker
 
 load_dotenv()
 
-gbt = "gpt-5.6-luna"
+gbt = "gpt-5.6-sol"
 coin = "\U0001FA99"
 tools = custom_tools
 available_tools = {
-    "get_weather": get_weather,
-    "mod_exp": mod_exp,
-    "get_url_contents": get_url_contents,
-    "get_conference_speakers": get_conference_speakers,
-    "fermat": fermat,
-    "generate_large_prime": generate_large_prime,
+   "shell": shell,
+    "read": read,
+    "write": write,
+    "edit": edit,
 }
 
 def chat_with_tools():
@@ -37,6 +35,7 @@ def chat_with_tools():
                 model=gbt,
                 input = history,
                 instructions="You are replying in a plain-text-terminal, format your answers properly so they render correctly in the terminal.",
+                reasoning = {"effort" : "medium"},
                 tools = tools,
             )
             tracker.track(response, time.time() - start, user_input)
