@@ -43,7 +43,7 @@ class UsageTracker(dict):
         if not self["records"]:
             return
 
-        os.makedirs("Past_Prompts", exist_ok=True)
+        os.makedirs("../Past_Prompts", exist_ok=True)
         date_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         while True:
             name = input(
@@ -61,7 +61,7 @@ class UsageTracker(dict):
             if not name.lower().endswith(".txt"):
                 name += ".txt"
 
-            filename = os.path.join("Past_Prompts", name)
+            filename = os.path.join("../Past_Prompts", name)
 
             if os.path.exists(filename):
                 print("That filename already exists. Please choose another.")

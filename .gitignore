@@ -21,5 +21,16 @@ Past_Prompts/
 media/
 Reports/
 zip_files/
+Resume_Website_OneShot_Example/Spec_for_App.md
+Resume_Website_OneShot_Example/StudentInformationOutline.md
+Resume_Website_OneShot_Example/
+
+System_One_Classifcation/
+System_One_Classifcation/classifier.yaml
+System_One_Classifcation/classify.py
+
+Chat_Files/Codex_Harness/runs
+Chat_Files/Codex_Harness/Resume_website
+JSON_SCHEMAS/candidate_profile.json
 
 

@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {"type": "string", "enum": ["completed", "needs_changes", "blocked", "needs_input"]},
+    "summary": {"type": "string"},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {"type": "string", "enum": ["test", "build", "asset", "page", "browser", "accessibility"]},
+          "result": {"type": "string", "enum": ["passed", "failed", "not_run"]},
+          "evidence": {"type": "string"}
+        },
+        "required": ["kind", "result", "evidence"],
+        "additionalProperties": false
+      }
+    },
+    "changes": {"type": "array", "items": {"type": "string"}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "owner": {"type": "string", "enum": ["ui", "developer"]},
+          "description": {"type": "string"}
+        },
+        "required": ["owner", "description"],
+        "additionalProperties": false
+      }
+    },
+    "questions": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["status", "summary", "checks", "changes", "findings", "questions"],
+  "additionalProperties": false
+}

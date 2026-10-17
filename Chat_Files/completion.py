@@ -19,7 +19,7 @@ def load_schema(schema_name):
 
 
 def create_prompt_session():
-    output_dir = "Past_Prompts"
+    output_dir = "../Past_Prompts"
     os.makedirs(output_dir, exist_ok=True)
 
     session_num = 1

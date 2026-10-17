@@ -11,7 +11,7 @@ load_dotenv()
 
 gbt = "gpt-5.6-luna"
 coin = "\U0001FA99"
-with open("System_Prompts/Game.md", "r", encoding="utf-8") as f:
+with open("../System_Prompts/Game.md", "r", encoding="utf-8") as f:
     system = f.read()
 
 def reasoning_chat(reasoning="medium",  ):

@@ -1,0 +1,10 @@
+__pycache__/
+runs/
+sessions/
+.env
+web_project/node_modules/
+web_project/.harness-verification/
+.browser_tools/
+.browsers/
+.game_tools/
+**/.harness-verification/

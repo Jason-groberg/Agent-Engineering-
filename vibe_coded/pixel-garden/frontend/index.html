@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#182b23" />
+  <meta name="description" content="A tiny pixel courtyard, six botanical curiosities, and one pleasantly unqualified adventurer. Wander through Pixel Garden." />
+  <link rel="icon" type="image/svg+xml" href="/art/fern.svg" />
+  <title>Pixel Garden — a small place to wander</title>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to exhibits</a>
+  <div class="page">
+    <header class="site-header">
+      <a href="/" class="brand" aria-label="Pixel Garden home"><img src="/art/fern.svg" alt="" /><span>pixel garden<span class="brand-sub">A SMALL PLACE TO WANDER</span></span></a>
+      <div class="header-actions"><span class="edition">VOL. 01 &nbsp; / &nbsp; THE COURTYARD</span><button id="quiet" class="quiet-button" aria-pressed="false">Quiet mode <span aria-hidden="true">○</span></button></div>
+    </header>
+    <main>
+      <section class="introduction" aria-labelledby="page-title">
+        <div><p class="eyebrow"><span class="tiny-star">✦</span> AN INTERACTIVE BOTANICAL COLLECTION</p><h1 id="page-title">A little wonder, off the beaten path.</h1></div>
+        <p class="intro-copy">Six little plants. A curious traveler.<br />Take the scenic route. There’s no rush here.</p>
+      </section>
+      <div class="experience">
+        <section class="garden-panel" aria-labelledby="garden-title">
+          <div class="panel-heading"><h2 id="garden-title"><span class="status-dot"></span> The courtyard</h2><span class="panel-coordinate">30 × 20 TILES &nbsp; · &nbsp; EARLY AUTUMN</span></div>
+          <div class="world-wrap">
+            <div id="game" tabindex="0" role="region" aria-label="Walkable garden. Use WASD or arrow keys to walk, E to inspect, and Tab to leave the garden." aria-describedby="controls"></div>
+            <div id="entry" class="entry"><button id="enter">Enter the garden <span aria-hidden="true">→</span></button><span>or browse the field guide alongside</span></div>
+            <p id="game-error" class="game-error" hidden></p>
+          </div>
+          <div id="controls" class="controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span class="or">/ arrows</span> to wander</span><span><kbd>E</kbd> to inspect</span><span id="nearby">Find something that catches your eye.</span></div>
+          <div class="companion"><div class="portrait" aria-hidden="true"></div><div><div class="companion-heading"><span>ROWAN</span><span class="companion-role">adventurer, amateur botanist</span></div><p id="speech" aria-live="polite" aria-atomic="true">The plants seem friendly. I’m less certain about the cactus.</p></div><span class="speech-star" aria-hidden="true">✧</span></div>
+        </section>
+        <aside id="collection" class="collection" aria-labelledby="collection-title" tabindex="-1">
+          <div class="collection-top"><p class="eyebrow">YOUR FIELD GUIDE</p><h2 id="collection-title">Small things.<br />Good company.</h2><p>Meet the residents. Walk up to a plant, or choose one below.</p></div>
+          <div class="collection-label"><h3>Browse exhibits</h3><span id="progress">0 / 6 found</span></div>
+          <ol id="exhibits" class="exhibit-list"></ol>
+          <div class="field-note"><span aria-hidden="true">✳</span><p>No quests to finish.<br />Just a few things worth noticing.</p></div>
+        </aside>
+      </div>
+      <footer><span>A pocket-sized collection of growing things.</span><span>MADE OF PIXELS & A LITTLE CURIOSITY <span aria-hidden="true">✦</span></span></footer>
+    </main>
+  </div>
+  <dialog id="art-dialog" aria-labelledby="art-title" aria-describedby="art-description">
+    <button id="close-dialog" class="close-dialog" aria-label="Close exhibit">×</button>
+    <div class="art-stage"><img id="art-image" src="/art/fern.svg" alt="" /></div>
+    <div class="art-copy"><p id="art-number" class="eyebrow"></p><h2 id="art-title"></h2><p id="art-description"></p><span class="art-medium">ORIGINAL PIXEL STUDY · THE COURTYARD COLLECTION</span><button id="back-to-garden" class="return-button">Back to wandering <span aria-hidden="true">↗</span></button></div>
+  </dialog>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

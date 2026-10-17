@@ -1,0 +1,10 @@
+{
+  "width":480,"height":320,"tileSize":16,
+  "spawn":{"x":240,"y":164},
+  "obstacles":[
+    {"x":0,"y":0,"width":480,"height":32},
+    {"x":0,"y":304,"width":480,"height":16},
+    {"x":0,"y":0,"width":16,"height":320},
+    {"x":464,"y":0,"width":16,"height":320}
+  ]
+}

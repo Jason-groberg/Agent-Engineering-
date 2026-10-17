@@ -8,7 +8,7 @@ from usage_tracker import UsageTracker
 
 load_dotenv()
 
-gbt = "gpt-5.6-sol"
+gbt = "gpt-6-luna"
 coin = "\U0001FA99"
 tools = custom_tools
 available_tools = {
@@ -67,6 +67,11 @@ def chat_with_tools():
     tracker.print_summary()
     tracker.save_to_file()
 
+def models():
+    client = OpenAI()
+    models = client.models.list()
+    for model in models:
+        print(model.id)
 
 if __name__ == "__main__":
     chat_with_tools()

@@ -1,18 +1,18 @@
-**Report a**
+**Report 1_**
 - 
 
-1. First
+1. Completed Tasks 
     - 
 
-2. 
+2. Other Areas Explored 
     -
 
-3. 
+3. Obstacles and what I Learned
    - 
    
-4. 
+4. Why it Matters :  
    - 
 
-5. What I learned
+5. Time Spent : 
    - 
 

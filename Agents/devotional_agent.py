@@ -1,5 +1,4 @@
-import os
-from completion import run_prompt
+from Chat_Files.completion import run_prompt
 
 def analyze_devotional():
     devo_path = "2.txt"
